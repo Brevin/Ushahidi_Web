@@ -527,7 +527,8 @@ class reports_Core {
 			{
 				$new_filename = $incident->id.'_'.$i.'_'.time();
 
-				$file_type = substr($filename,-4);
+				//$file_type = substr($filename,-4);
+				$file_type = strrchr($filename, '.');// Change to cater for all image extensions regardless of the length of the extension.
 				
 				// Name the files for the DB
 				$media_link = $new_filename.$file_type;
